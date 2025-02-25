@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #0a1931, #162447, #1f4068);
+            text-align: center;
+            flex-direction: column;
+            color: white;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            width: 80%;
+            max-width: 500px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+            font-size: 28px;
+            color: #00d4ff;
+        }
+
+        p {
+            color: #d3d3d3;
+        }
+
+        .btn-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px;
+            background: rgba(0, 212, 255, 0.2);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 105%;
+            font-weight: bold;
+            border: 1px solid #00d4ff;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background: rgba(0, 212, 255, 0.4);
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #00d4ff;
+        }
+
+        @media (max-width: 500px) {
+            .btn-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to Business Dashboard</h1>
+        <p>Manage your business efficiently with quick access to important features.</p>
+        
+        <div class="btn-container">
+            <button class="btn" onclick="setImageAndRedirect('sales_trends.png')">📈Sales Trends</button>
+            <button class="btn" onclick="setImageAndRedirect('sales_region.png')">🗺️Sales Region</button>
+            <button class="btn" onclick="setImageAndRedirect('sales_category.png')">📊Sales Category</button>
+            <button class="btn" onclick="setImageAndRedirect('profit_analysis.png')">📉Profit Analysis</button>
+            <button class="btn" onclick="setImageAndRedirect('discount_profit.png')">🔖Discount Profit</button>
+            <button class="btn" onclick="location.href='#'">⚙️ Settings</button>
+        </div>
+    </div>
+
+    <script>
+        function setImageAndRedirect(imageName) {
+            localStorage.setItem("selectedImage", imageName);
+            window.location.href = "chart.html";
+        }
+    </script>
+
+</body>
+</html>

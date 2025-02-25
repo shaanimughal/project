@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart | Business Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #0a1931, #162447, #1f4068);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .container img {
+            width: 80%;
+            border-radius: 12px;
+        }
+
+        h1 {
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #d3d3d3;
+            font-size: 18px;
+        }
+
+        .btn {
+            padding: 12px;
+            background: rgba(0, 212, 255, 0.2);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            font-weight: bold;
+            border: 1px solid #00d4ff;
+            text-transform: uppercase;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background: rgba(0, 212, 255, 0.4);
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #00d4ff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Selected Chart</h1>
+        <img id="chartImage" src="default.png" alt="Chart Image">
+        <button class="btn" onclick="goBack()">⬅ Back to Dashboard</button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const storedImage = localStorage.getItem("selectedImage");
+            if (storedImage) {
+                document.getElementById("chartImage").src = storedImage;
+            }
+        };
+
+        function goBack() {
+            window.location.href = "mainpg.html";
+        }
+    </script>
+
+</body>
+</html>
